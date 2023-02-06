@@ -1,5 +1,5 @@
+//Ativar Links Menu
 const links = document.querySelectorAll(".header-menu a");
-
 function ativarLinks(link) {
   const url = location.href;
   const href = link.href;
@@ -7,5 +7,17 @@ function ativarLinks(link) {
     link.classList.add("ativo");
   }
 }
-
 links.forEach(ativarLinks);
+
+//Ativar Itens Orcamento
+
+const parametros = new URLSearchParams(location.search);
+
+function ativarProduto(parametro) {
+  const elemento = document.getElementById(parametro);
+  if (elemento) {
+    elemento.checked = true;
+  }
+}
+
+parametros.forEach(ativarProduto);
